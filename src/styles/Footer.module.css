@@ -1,0 +1,40 @@
+  .footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    /* background: #8c52ff; */
+    background: linear-gradient(to right, rgba(50, 0, 130, 0.753), rgba(162, 73, 0, 0.719), rgba(200, 170, 0, 0.582)); 
+    padding: 0;
+    margin: 0;
+   }
+
+   .menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.menu li{
+    list-style-type: none;
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+    color: white;
+    padding: 40px 25px;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    line-height: 1;
+    transition: 0.3s;
+}
+
+.menu li:hover{
+    color: aquamarine;
+    cursor: pointer;
+    box-shadow: 0 -5px 0 #fff inset,
+    500px 0 0 rgba(255, 255, 255, 0.03) inset;
+    padding: 35px 25px 45px 25px;
+}
