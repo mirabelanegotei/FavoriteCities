@@ -8,7 +8,7 @@ const Navbar = () =>{
             <input type="checkbox" className={styles.toggle}/>
             <div className={styles.hamburger}></div>
             <ul className={styles.menu}>
-                <Link href="/components/Home"><li>Home</li></Link>
+                <Link href="/"><li>Home</li></Link>
                 <Link href="/components/Search"><li>Search</li></Link>
                 <Link href="/components/Favorites"><li>Favorite</li></Link>
                 <Link href="/components/City"><li>City</li></Link>
