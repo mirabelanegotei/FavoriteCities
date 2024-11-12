@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "../../styles/Search.module.css";
-// import Link from "next/link";
+import Link from "next/link";
 
 const Search = () =>{
 
@@ -21,7 +21,7 @@ const Search = () =>{
         setLoading(false);
         }
       };
-      
+
       const handleInputChange = (event) => {
         setSearchTerm(event.target.value);
       };
@@ -62,8 +62,17 @@ const Search = () =>{
                     <br/>
                     <span>Timezone: {result.timezone}</span>
                   </div>
-                    {/* <Link href={`/components/city/city?cityName=${result.name}&lat=${result.latitude}&long=${result.longitude}&pop=${result.population}
-                    &elev=${result.elevation}&timez=${result.timezone}`}><button className={styles.btn}>More details</button></Link> */}
+                    <Link
+                    href={{
+                      pathname: "/components/city/city",
+                      query: {
+                        cityName: result.name,
+                        lat: result.latitude,
+                        long: result.longitude,
+                        pop: result.population,
+                        elev: result.elevation,
+                        timez: result.timezone,
+                    },}}><button className={styles.btn}>More details</button></Link>
                 </li>
             ))):(!loading && <li className={styles.noResults}>No locations found</li>)}
           </ul>

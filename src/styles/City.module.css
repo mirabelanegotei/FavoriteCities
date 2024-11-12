@@ -9,3 +9,65 @@
     padding: 0;
     margin: 0;
   }
+  .h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .weatherAndCoordinates {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .coordinates, .weatherInfo {
+    flex: 1 1 45%;
+    padding: 20px;
+    border-radius: 8px;
+    background: linear-gradient(to right, rgba(50, 0, 130, 0.311), rgb(162, 74, 0.311), rgba(200, 170, 0, 0.311)); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .coordinates h3, .weatherInfo h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .coordinates ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .coordinates li {
+    font-size: 1rem;
+    margin: 8px 0;
+  }
+  
+  .strong {
+    color: #333;
+  }
+  
+  .boxWeather {
+    background: linear-gradient(to right, rgba(50, 0, 130, 0.311), rgb(162, 74, 0.311), rgba(200, 170, 0, 0.311)); 
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .boxWeather p {
+    font-size: 1.1rem;
+    margin: 8px 0;
+  }
+  
+  .boxWeather p strong {
+    color: #555;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .coordinates, .weatherInfo {
+      flex: 1 1 100%;
+    }
+  }
