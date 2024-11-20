@@ -1,12 +1,14 @@
 import { DataSource } from "typeorm";
 import User from "@/pages/entity/User"; 
+import FavoriteCity from "@/pages/entity/FavoriteCity";
 
 const AppDataSource = new DataSource({
   type: "sqlite",
   database: "databases/favcities", 
   synchronize: true, 
   logging: true,
-  entities: [User],
+  entities: [User, FavoriteCity],
+  synchronize: true,
 });
 
 AppDataSource.initialize()

@@ -17,7 +17,17 @@ const User = new EntitySchema({
     password: {
       type: "varchar",
     },
+
+  },
+  relations: {
+    favorites: {
+      type: "many-to-many",
+      target: "Favorite",
+      inverseSide: "users",
+      cascade: true,
+      joinTable: true,
+    },
   },
 });
 
-export default User;
+export default User;
