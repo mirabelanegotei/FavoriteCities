@@ -145,10 +145,12 @@ const City = () => {
   return (
     <div className={styles.container}>
       <h1>More details about {cityName}</h1>
-      <button className={styles.btn}
-              onClick={isFavorite ? removeFromFavorites : addToFavorites}>
-        {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
-      </button>
+      <div
+      className={styles.heartContainer}
+      onClick={isFavorite ? removeFromFavorites : addToFavorites}
+      >
+      <i className={`fas fa-heart ${isFavorite ? styles.redHeart : styles.whiteHeart}`}></i>
+      </div>
       <div className={styles.weatherAndCoordinates}>
         <div className={styles.coordinates}>
           <h3>Coordinates:</h3>

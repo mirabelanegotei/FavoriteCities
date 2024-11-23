@@ -96,9 +96,11 @@ const Favorites = () => {
                       <br />
                       <span>Timezone: {city.timezone}</span>
                     </div>
-                    <button className={styles.btn}
-                            onClick={() => removeFromFavorites(city.cityName)}>
-                    Remove from Favorite</button>
+                    <div
+                    className={styles.heartContainer}
+                    onClick={() => removeFromFavorites(city.cityName)}>
+                    <i className={`fas fa-heart ${styles.redHeart }`}></i>
+                    </div>
                   </li>
               ))
           ) : (
