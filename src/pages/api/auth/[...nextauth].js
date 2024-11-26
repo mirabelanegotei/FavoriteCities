@@ -21,11 +21,11 @@ export default NextAuth({
       }
       const userRepository = AppDataSource.getRepository(User);
       const user = await userRepository.findOneBy({ username });
-      
+
       if (!user) {
         throw new Error("User not found");
       }
-     
+
       const isValid = await bcrypt.compareSync(password, user.password);
       if (!isValid) {
         throw new Error("Invalid credentials");
@@ -34,8 +34,9 @@ export default NextAuth({
     },
     }),
   ],
+  secret: 'digital-nation-secret-key',
   pages: {
-    signIn: "/auth/signin", 
+    signIn: "/auth/signin",
   },
   session: {
     strategy: "jwt",

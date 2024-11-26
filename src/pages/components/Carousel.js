@@ -35,9 +35,10 @@ const Carousel = ({title, cities}) => {
         <div className={styles.citySlide}>
           <h4>{currentCity.cityName}</h4>
           <p>Coordinates: {currentCity.lat}, {currentCity.long}</p>
-          <p>Population: {currentCity.population}</p>
-          <p>Elevation: {currentCity.elevation}</p>
-          <p>Timezone: {currentCity.timezone}</p>
+          <p>{!!currentCity.country && `Country: ${currentCity.country}`}</p>
+          <p>{!!currentCity.population && `Population: ${currentCity.population}`}</p>
+          <p>{!!currentCity.elevation && `Elevation: ${currentCity.elevation}`}</p>
+          <p>{!!currentCity.timezone && `Timezone: ${currentCity.timezone}`}</p>
         </div>
         <div className={styles.arrowContainer} onClick={nextCity}>
           <i className={`fas fa-arrow-right ${styles.arrowColor }`}></i>
