@@ -1,14 +1,24 @@
-  .footer{
+.footer {
     display: flex;
     align-items: center;
-    justify-content: center;   
-    /* background: #8c52ff; */
-    background: linear-gradient(to right, rgba(50, 0, 130, 0.753), rgba(162, 73, 0, 0.719), rgba(200, 170, 0, 0.582)); 
+    justify-content: center;
+    background: linear-gradient(to right, rgba(50, 0, 130, 0.753), rgba(162, 73, 0, 0.719), rgba(200, 170, 0, 0.582));
     padding: 0;
     margin: 0;
-   }
+    position: relative; 
+    width: 100%;
+    min-height: 100px; 
+}
 
-   .menu{
+.weatherContainer {
+    position: absolute; 
+    left: 20px; 
+    top: 50%;
+    transform: translateY(-50%); 
+    flex-shrink: 0; 
+}
+
+.menu {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,9 +27,8 @@
     transition: 0.5s;
 }
 
-.menu li{
+.menu li {
     list-style-type: none;
-    list-style: none;
     padding: 0 20px;
     position: relative;
     color: white;
@@ -31,7 +40,7 @@
     transition: 0.3s;
 }
 
-.menu li:hover{
+.menu li:hover {
     color: aquamarine;
     cursor: pointer;
     box-shadow: 0 -5px 0 #fff inset,
