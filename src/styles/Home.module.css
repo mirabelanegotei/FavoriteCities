@@ -69,6 +69,30 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.signOutContainer {
+  cursor: pointer;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.whiteSignOut {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.signOutContainer:hover .fas {
+  transform: scale(1.2); 
+  transition: transform 0.2s ease;
+}
+
+.title {
+  color: white; 
+  margin-bottom: 20px; 
+}
+
 @media screen and (max-width: 992px){
   .header{
     padding: 10px 20px;

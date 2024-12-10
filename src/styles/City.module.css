@@ -15,6 +15,60 @@
     color: #333;
   }
   
+  .heartContainer {
+    cursor: pointer;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .redHeart {
+    color: red;
+    transition: color 0.3s ease;
+  }
+  
+  .whiteHeart {
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  .heartContainer:hover .fas {
+    transform: scale(1.2); 
+    transition: transform 0.2s ease;
+  }
+
+  .btn {
+    background: linear-gradient(to right, rgba(50, 0, 130, 0.712), rgba(162, 73, 0, 0.822), rgba(200, 170, 0, 0.76));
+    color: white;
+    font-weight: bold;
+    border: none;
+    width: 110px;
+    height: 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px 0 10px 20px;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, rgba(50, 0, 130, 0.712), rgba(162, 73, 0, 0.822), rgba(200, 170, 0, 0.76));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    background: #6538a8;
+    transform: translateY(1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
   .weatherAndCoordinates {
     display: flex;
     flex-wrap: wrap;

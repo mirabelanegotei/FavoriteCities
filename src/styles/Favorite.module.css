@@ -1,11 +1,115 @@
 .container {
     display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    height: 80vh; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
     /* background: #8c52ff; */
-    background: linear-gradient(to right, rgba(50, 0, 130, 0.311), rgb(162, 74, 0.311), rgba(200, 170, 0, 0.311)); 
+    background: linear-gradient(to right, rgba(50, 0, 130, 0.311), rgb(162, 74, 0.311), rgba(200, 170, 0, 0.311));
     padding: 0;
     margin: 0;
 }
+
+.title {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.resultsList {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+    width: 80%;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    max-height: 3000px;
+}
+
+.resultItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.resultInfo {
+    font-size: 1.1rem;
+}
+
+.resultItem strong {
+    font-size: 1.3rem;
+}
+
+.btn {
+    background: linear-gradient(to right, rgba(50, 0, 130, 0.712), rgba(162, 73, 0, 0.822), rgba(200, 170, 0, 0.76));
+    color: white;
+    font-weight: bold;
+    border: none;
+    width: 110px;
+    height: 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, rgba(50, 0, 130, 0.712), rgba(162, 73, 0, 0.822), rgba(200, 170, 0, 0.76));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    background: #6538a8;
+    transform: translateY(1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.noResults {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #777;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.heartContainer {
+    cursor: pointer;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .redHeart {
+    color: red;
+    transition: color 0.3s ease;
+  }
+  
+  .heartContainer:hover .fas {
+    transform: scale(1.2); 
+    transition: transform 0.2s ease;
+  }

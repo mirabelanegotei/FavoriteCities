@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../../styles/Search.module.css";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import SearchForm from "./SearchForm";
 
 const Search = () =>{
 
-    const[searchTerm, setSearchTerm] = useState("");
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    const searchCities = async () => {
+    const router = useRouter();
+    const { term } = router.query;
+
+    const searchCities = async (searchTerm) => {
         setLoading(true);
         try {
           const response = await fetch(`/api/geocoding?name=${searchTerm}`);
@@ -22,33 +26,18 @@ const Search = () =>{
         }
       };
 
-      const handleInputChange = (event) => {
-        setSearchTerm(event.target.value);
-      };
-
-      const handleSearch = (event) => {
-        event.preventDefault();
-        if (searchTerm.trim()) {
-          searchCities();
+      useEffect(() => {
+        if (term) {
+          searchCities(term);
         }
-      };
-
-      const handleIconClick = () => {
-        if (searchTerm.trim()) {
-          searchCities();
-        }
-      };
+      }, [term]);
 
     return (
         <div className={styles.container}>
-          <h1 className={styles.title}>Welcome to Search Page</h1>
           <h2 className={styles.title}>Search for cities name</h2>
-          <form className={styles.form} onSubmit={handleSearch}>
-            <input className={styles.input} type="search" placeholder="Search here ..." value={searchTerm} onChange={handleInputChange}/>
-            <i className={`fas fa-search ${styles.icon}`} onClick={handleIconClick}></i>
-          </form>
-       {loading && <p>Loading...</p>}
-          <ul  className={styles.resultsList}>
+          <SearchForm defaultTerm={term || ""} onSearchComplete={searchCities} />
+          {loading ? (<p>Loading...</p>) : (          
+            <ul  className={styles.resultsList}>
             {results.length > 0 ? (results.map((result)=>(
                 <li key={result.id} className={styles.resultItem}>
                   <div className={styles.resultInfo}>
@@ -75,7 +64,7 @@ const Search = () =>{
                     },}}><button className={styles.btn}>More details</button></Link>
                 </li>
             ))):(!loading && <li className={styles.noResults}>No locations found</li>)}
-          </ul>
+          </ul>)}
         </div>)}
 
 export default Search;
